@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#E45684"/>
+    <link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <script src="js_interactions.js" type="text/javascript"></script>
+
+
+	<title>Rule Ticket Info</title>
+	
+</head>
+<body onload="getContext()">
+
+
+	<div id="status"></div><br />
+	<div id="ticketNumber">
+			<h3>Ticket Number: <span id="ticketnum">Loading...</span></h3>
+	</div>
+	<div id="ticketData">
+
+		<p><span id="ticket_comments">Comments from ServiceNow</span></p>
+
+		<div>
+
+			<p><b>Stage:</b> <span id="servicenow_stage"></span></p>
+			<p><b>Approval:</b> <span id="servicenow_approval"></span></p>
+			<p><b>Ticket Creation Date:</b> <span id="servicenow_ticket_creation_date"></span></p>
+			<div><input type="button" onclick="synchronizeComments()" value="Synchronize" /></div>
+
+		</div>
+	</div>
+
+</body>
+</html>

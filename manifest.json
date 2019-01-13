@@ -1,0 +1,46 @@
+{
+	"extension": {
+		"name": "Rule Ticket Info",
+		"product-url": "https:\/\/community.checkpoint.com",
+		"provider": "Check Point Software Technologies",
+		"description" : "Information about an Access Control Rule from ServiceNow",
+		"version": "1.0"
+	},
+	"locations": [
+	{
+		"location": "details-pane",
+		"relevant-types": ["access-policy"],
+		"ui-element": {
+			"type": "tab",
+			"caption": "ServiceNow™ Information",
+			"tooltip": "Information about an Access Control Rule from ServiceNow",
+			"action": {
+				"details-level": "full",
+				"method": "get",
+				"trigger-id": "access-policy-details-pane",
+				"url": "index.html"
+			}
+		}
+	},
+	{
+		"location": "post-enable-popup",
+		"relevant-types": ["extension"],
+		"ui-element": {
+			"caption": "ServiceNow integration is ON!",
+			"tooltip": "",
+			"action": {
+				"browser-window": {
+						"height": "460",
+						"width": "760"
+					},
+				"details-level": "uid",
+				"method": "get",
+				"trigger-id": "post-installation-popup",
+				"url": "instructions.html"
+			}
+		}
+	}],
+	"requested-permissions": {
+		"client": ["get-read-only-session"]
+	}
+}
