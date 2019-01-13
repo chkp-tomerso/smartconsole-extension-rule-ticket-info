@@ -7,10 +7,15 @@ This integration is supported for SmartConsole of versions R80.20 and above.
 Components
 ----------
 manifest.json - describes the SmartConsole Extenion. In this case, it will add a tab to the bottom pane of the selected rule at the Access Control policy. 
+
 index.html - the SmartConsole Extension page. It only fetches details from ServiceNow when it's hosted as a SmartConsole Extension.
+
 js_interactions.js - uses the SmartConsole Extensions API to get the selected rule, fetch its details from ServiceNow using servicenow-calls.php, and also synchronize the comments from ServiceNow with the comments of the selected Access Control Rule.
+
 instructions.html - After the user adds the SmartConsole Extension, a pop-up page shows where to find the newly added page.
+
 style.css - styling for the HTML pages.
+
 servicenow-calls.php - a very simple server-side page which given a ticket ID, gets the details of the ticket from ServiceNow. 
 
 
