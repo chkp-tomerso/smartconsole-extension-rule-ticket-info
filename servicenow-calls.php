@@ -16,14 +16,9 @@
 	$ticketNumber = $_GET["ticket-number"];
 	
 	// Note: we get the ServiceNow login credentials from the registry.
-	$keyConst = HKEY_LOCAL_MACHINE;
-	$key = "SOFTWARE\ServiceNowSmartConsoleExtension";
-	if (!($reg = reg_open_key($keyConst, $key))) {
-		throw new Exception("Cannot access registry.");
-	}
-	$credentials = reg_get_value($reg, "logininfo");
-
-	
+	$Wshshell= new COM('WScript.Shell');
+	$credentials= $Wshshell->regRead('HKEY_LOCAL_MACHINE\SOFTWARE\ServiceNowSmartConsoleExtension\logininfo');
+		
 	// Note: Other users are most likely to change this address, and the tables. They are specific to my environment.
 	$query = "https://dev57863.service-now.com/api/x_159908_firewallr/firewall_request/fetch_request?number=".$ticketNumber;
 		
